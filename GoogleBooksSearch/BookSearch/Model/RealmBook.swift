@@ -21,6 +21,8 @@ class RealmBook: Object {
     
     static func create(using book: Book) -> RealmBook {
         let realmBook = RealmBook()
+        
+        //i only save the book identifier here because I did not want to have to save the array of author's names to realm when I could just re-download everything from the API anyway.
         realmBook.identifier = book.identifier
         //realmBook.title = book.title
         //realmBook.authors = book.authors

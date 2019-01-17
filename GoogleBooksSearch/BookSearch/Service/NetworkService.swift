@@ -14,12 +14,13 @@ class NetworkService {
     
     let searchURL = "https://www.googleapis.com/books/v1/volumes?q="
     let volumeURL = "https://www.googleapis.com/books/v1/volumes/"
-    // API key is not working, so I am omitting it for now
+    // my API key is not working, so I am omitting it for now
     let apiKey = "&key=AIzaSyBbdQHd1QQofSLfDF0wpoVqtsBbq7usfF4"
     
     typealias Handler = ([Book]) -> ()
     
     func search(for text: String, completion: @escaping Handler) {
+        //retrieves all books matching the search query from the google books API as an array of books
         
         //print(text)
         Alamofire.request(searchURL + text).responseJSON() { response in
@@ -44,6 +45,7 @@ class NetworkService {
     }
     
     func getFavs(with volumeIDs: [String], completion: @escaping Handler) {
+        //retrieves a set of books using an array of strings containing their unique volume IDs as an array of books
         
         var books: [Book] = []
         
@@ -62,13 +64,14 @@ class NetworkService {
                 }
                 
                 books.append(book)
-                print(book)
+                //print(book)
             }
         }
         completion(books)
     }
     
     func getBook(with volumeID: String, completion: @escaping (Book) -> () ) {
+        //retrieves one book from the API using that book's unique identifier
         Alamofire.request(volumeURL + volumeID).responseJSON() { response in
             guard let value = response.result.value else {
                 print("data response failed")
@@ -82,7 +85,7 @@ class NetworkService {
                 return
             }
             
-            print(book)
+            //print(book)
             completion(book)
         }
     }

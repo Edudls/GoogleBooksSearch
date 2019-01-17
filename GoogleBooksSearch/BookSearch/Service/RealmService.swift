@@ -12,6 +12,7 @@ import RealmSwift
 class RealmService {
     
     func save(book: Book) {
+        //save one book's volume identifier to the realm
         DispatchQueue.global(qos: .utility).async {
             let realm = try! Realm()
             let realmBook = RealmBook.create(using: book)
@@ -23,6 +24,7 @@ class RealmService {
     }
     
     func remove(book: Book) {
+        //removes one book from the realm
         DispatchQueue.global(qos: .utility).async {
             let realm = try! Realm()
             let realmBook = realm.objects(RealmBook.self).filter("identifier = %@", book.identifier)
@@ -37,12 +39,13 @@ class RealmService {
     typealias Handler = ([String]) -> ()
     
     func getBooks(completion: @escaping Handler) {
+        //retrieves the array of volume IDs of books from the realm as an array of strings
         DispatchQueue.main.async {
             var books: [String] = []
             let realm = try! Realm()
             
             let bookObjects = realm.objects(RealmBook.self)
-            print(bookObjects)
+            //print(bookObjects)
             books = Array(bookObjects.map{$0.identifier})
             completion(books)
         }

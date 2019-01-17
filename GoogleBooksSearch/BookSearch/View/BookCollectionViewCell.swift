@@ -23,6 +23,7 @@ class BookCollectionViewCell: UICollectionViewCell {
         
         self.titleText.text = book.title
         
+        //gotta convert the array of strings from authors into a single string to display
         if let authors = book.authors {
             var text = ""
             for author in authors {
@@ -33,7 +34,9 @@ class BookCollectionViewCell: UICollectionViewCell {
             self.authorText.text = text
         } else {self.authorText.text = "Author unknown"}
         
+        //get the thumbnail (if it exists) using the thumbnail url
         if let urlText = book.thumbnail {
+            //replace "http" with "https" so it's a secure web request
             let url = URL(string: urlText.replacingOccurrences(of: "http", with: "https"))
             self.imageView.sd_setImage(with: url, placeholderImage: nil)
         } else { self.imageView.image = UIImage(contentsOfFile: self.defaultImage) }
