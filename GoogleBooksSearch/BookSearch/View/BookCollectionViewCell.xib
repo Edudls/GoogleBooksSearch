@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="bookCell" reuseIdentifier="bookCell" id="Urg-vR-o3r" customClass="BookCollectionViewCell" customModule="BookSearch" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="182" height="220"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="182" height="220"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GBm-pO-rhf">
+                        <rect key="frame" x="0.0" y="0.0" width="182" height="120"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="120" id="wsl-Qw-AFn"/>
+                        </constraints>
+                    </imageView>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5tv-db-Mbh">
+                        <rect key="frame" x="147" y="5" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="3t7-K0-UGg"/>
+                            <constraint firstAttribute="width" constant="30" id="XKU-rb-04m"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="dQP-Px-Nbn">
+                        <rect key="frame" x="5" y="120" width="172" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="XQf-Wf-kWX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authors" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="CSq-gz-Gne">
+                        <rect key="frame" x="5" y="170" width="172" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="20Y-X3-83q"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="dQP-Px-Nbn" firstAttribute="leading" secondItem="KbG-xa-vvM" secondAttribute="leading" constant="5" id="28l-vI-TeK"/>
+                <constraint firstItem="dQP-Px-Nbn" firstAttribute="top" secondItem="GBm-pO-rhf" secondAttribute="bottom" id="6oa-pW-P3r"/>
+                <constraint firstItem="KbG-xa-vvM" firstAttribute="trailing" secondItem="5tv-db-Mbh" secondAttribute="trailing" constant="5" id="7if-ul-apA"/>
+                <constraint firstItem="KbG-xa-vvM" firstAttribute="trailing" secondItem="CSq-gz-Gne" secondAttribute="trailing" constant="5" id="MA0-hX-LE6"/>
+                <constraint firstItem="GBm-pO-rhf" firstAttribute="top" secondItem="KbG-xa-vvM" secondAttribute="top" id="OWr-Ew-bl1"/>
+                <constraint firstItem="GBm-pO-rhf" firstAttribute="leading" secondItem="KbG-xa-vvM" secondAttribute="leading" id="Pue-To-rhg"/>
+                <constraint firstItem="KbG-xa-vvM" firstAttribute="trailing" secondItem="dQP-Px-Nbn" secondAttribute="trailing" constant="5" id="R0W-wJ-WiC"/>
+                <constraint firstItem="KbG-xa-vvM" firstAttribute="trailing" secondItem="GBm-pO-rhf" secondAttribute="trailing" id="S45-86-6JG"/>
+                <constraint firstItem="CSq-gz-Gne" firstAttribute="top" secondItem="dQP-Px-Nbn" secondAttribute="bottom" id="Uag-RS-gQT"/>
+                <constraint firstItem="5tv-db-Mbh" firstAttribute="top" secondItem="KbG-xa-vvM" secondAttribute="top" constant="5" id="iiG-0n-AhB"/>
+                <constraint firstItem="CSq-gz-Gne" firstAttribute="leading" secondItem="KbG-xa-vvM" secondAttribute="leading" constant="5" id="tBg-4K-Fxv"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="KbG-xa-vvM"/>
+            <size key="customSize" width="182" height="220"/>
+            <connections>
+                <outlet property="authorText" destination="CSq-gz-Gne" id="s41-7y-b5F"/>
+                <outlet property="favIcon" destination="5tv-db-Mbh" id="1G1-oA-zI7"/>
+                <outlet property="imageView" destination="GBm-pO-rhf" id="lg4-Rh-Tub"/>
+                <outlet property="titleText" destination="dQP-Px-Nbn" id="9l3-FB-tlp"/>
+            </connections>
+            <point key="canvasLocation" x="496" y="-164"/>
+        </collectionViewCell>
+    </objects>
+</document>
